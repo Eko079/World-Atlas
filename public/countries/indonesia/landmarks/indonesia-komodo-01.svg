@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><rect width="1200" height="900" fill="url(#bg)"/><linearGradient id="bg" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#07090C"/><stop offset="1" stop-color="#10141B"/></linearGradient><filter id="grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="366" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.6 0 0 0 0 0.62 0 0 0 0 0.66 0 0 0 0.05 0"/>
+</filter><rect width="1200" height="900" filter="url(#grain)" opacity="0.6"/><g stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"><line x1="200" y1="0" x2="200" y2="900"/><line x1="400" y1="0" x2="400" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/><line x1="1000" y1="0" x2="1000" y2="900"/><line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="400" x2="1200" y2="400"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="800" x2="1200" y2="800"/></g><radialGradient id="gl" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E63946" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#E63946" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="600" cy="495.00000000000006" r="460" fill="url(#gl)"/><polygon points="0,760 100,640 300,560 500,660 700,580 900,640 1150,560 1200,760 1200,2000 0,2000" fill="#0B0E13" fill-opacity="1"/><g transform="translate(560,560)">
+       <path d="M-60 60 Q-10 20 20 30 Q60 8 80 24 Q120 -8 150 16 Q170 -20 150 22 Q160 50 130 58 Q70 40 50 78 Q10 80 -20 120 Q-60 96 -60 60 Z" fill="#10141B" stroke="#E63946" stroke-opacity="0.35"/>
+     </g><rect x="60" y="60" width="28" height="2" fill="#E63946"/><text x="60" y="96" font-family="ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#F4F4F2">KOMODO NATIONAL PARK</text><text x="60" y="118" font-family="ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#8B929C">EAST NUSA TENGGARA — 08°35′S 119°29′E</text></svg>

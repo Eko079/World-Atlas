@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><rect width="1200" height="900" fill="url(#bg)"/><linearGradient id="bg" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#07090C"/><stop offset="1" stop-color="#10141B"/></linearGradient><filter id="grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="366" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.6 0 0 0 0 0.62 0 0 0 0 0.66 0 0 0 0.05 0"/>
+</filter><rect width="1200" height="900" filter="url(#grain)" opacity="0.6"/><g stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"><line x1="200" y1="0" x2="200" y2="900"/><line x1="400" y1="0" x2="400" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/><line x1="1000" y1="0" x2="1000" y2="900"/><line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="400" x2="1200" y2="400"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="800" x2="1200" y2="800"/></g><radialGradient id="gl" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E63946" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#E63946" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="600" cy="495.00000000000006" r="460" fill="url(#gl)"/><polygon points="0,700 150,520 400,440 650,520 900,460 1150,540 1200,700 1200,2000 0,2000" fill="#0B0E13" fill-opacity="1"/><g opacity="0.9">
+       <polygon points="430,560 770,560 720,500 480,500" fill="#0B0E13"/>
+       <polygon points="460,500 740,500 700,440 500,440" fill="#0B0E13"/>
+       <polygon points="490,440 710,440 680,380 520,380" fill="#0B0E13"/>
+       <circle cx="600" cy="330" r="34" fill="#0B0E13"/>
+       <circle cx="600" cy="330" r="34" fill="none" stroke="#E63946" stroke-opacity="0.5"/>
+       <circle cx="520" cy="362" r="9" fill="#10141B" stroke="#FFFFFF" stroke-opacity="0.15"/><circle cx="560" cy="362" r="9" fill="#10141B" stroke="#FFFFFF" stroke-opacity="0.15"/><circle cx="640" cy="362" r="9" fill="#10141B" stroke="#FFFFFF" stroke-opacity="0.15"/><circle cx="680" cy="362" r="9" fill="#10141B" stroke="#FFFFFF" stroke-opacity="0.15"/>
+     </g><rect x="60" y="60" width="28" height="2" fill="#E63946"/><text x="60" y="96" font-family="ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#F4F4F2">BOROBUDUR</text><text x="60" y="118" font-family="ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#8B929C">CENTRAL JAVA — 07°36′S 110°12′E</text></svg>

@@ -1,0 +1,267 @@
+{
+  "slug": "indonesia",
+  "index": 1,
+  "name": "Indonesia",
+  "officialName": "Republic of Indonesia",
+  "localName": "Republik Indonesia",
+
+  "codes": {
+    "alpha2": "ID",
+    "alpha3": "IDN",
+    "numeric": "360"
+  },
+
+  "identity": {
+    "officialName": "Republic of Indonesia",
+    "localName": "Republik Indonesia",
+    "motto": "Bhinneka Tunggal Ika",
+    "anthem": "Indonesia Raya",
+    "independence": "17 August 1945",
+    "capital": "Jakarta",
+    "callingCode": "+62",
+    "internetTld": ".id"
+  },
+
+  "geography": {
+    "continent": "Asia",
+    "region": "Southeast Asia",
+    "subregion": "Maritime Southeast Asia",
+    "areaKm2": 1904569,
+    "waterKm2": 93000,
+    "coordinates": "00°00′S 115°00′E",
+    "islands": 17000,
+    "highestPoint": "Puncak Jaya — 4,884 m",
+    "longestRiver": "Kapuas River — 1,143 km",
+    "neighbors": ["Malaysia", "Papua New Guinea", "Timor-Leste"],
+    "seas": ["Java Sea", "Banda Sea", "Celebes Sea", "Arafura Sea", "South China Sea", "Indian Ocean", "Pacific Ocean"]
+  },
+
+  "capital": {
+    "name": "Jakarta",
+    "coordinates": "06°12′S 106°49′E",
+    "population": 10680000,
+    "province": "Special Capital Region of Jakarta",
+    "timezone": "WIB (UTC+7)",
+    "description": "A dense metropolis on the northwest coast of Java, Jakarta is Indonesia's political and economic heart — a city of layered histories, waterfronts, and relentless energy.",
+    "image": "/countries/indonesia/cities/indonesia-jakarta-01.svg"
+  },
+
+  "population": {
+    "total": 285000000,
+    "density": 149,
+    "urbanPercentage": 57,
+    "ethnicGroups": ["Javanese", "Sundanese", "Malay", "Batak", "Madurese", "Betawi", "Minangkabau", "Buginese", "Balinese", "Dayak"]
+  },
+
+  "languages": {
+    "official": ["Bahasa Indonesia"],
+    "regional": ["Javanese", "Sundanese", "Madurese", "Balinese", "Buginese", "Minangkabau", "Batak", "Acehnese", "Papuan Languages"],
+    "livingCount": 700
+  },
+
+  "currency": {
+    "name": "Indonesian Rupiah",
+    "code": "IDR",
+    "symbol": "Rp",
+    "gdp": 1425000000000,
+    "gdpPerCapita": 5100,
+    "industries": ["Petroleum & Gas", "Mining", "Textiles", "Automotive", "Agriculture", "Electronics"],
+    "exports": ["Palm Oil", "Coal", "Natural Gas", "Electronics", "Rubber", "Coffee", "Nickel"]
+  },
+
+  "leadership": [
+    {
+      "role": "Head of State",
+      "name": "Prabowo Subianto",
+      "photo": "/countries/indonesia/leaders/indonesia-president-01.svg",
+      "term": "2024 — Present",
+      "party": "President"
+    },
+    {
+      "role": "Vice President",
+      "name": "Gibran Rakabuming Raka",
+      "photo": "/countries/indonesia/leaders/indonesia-vice-president-01.svg",
+      "term": "2024 — Present",
+      "party": "Vice President"
+    }
+  ],
+
+  "landmarks": [
+    {
+      "name": "Borobudur",
+      "location": "Central Java",
+      "coordinates": "07°36′S 110°12′E",
+      "description": "The world's largest Buddhist temple, a ninth-century stone mandala of over two million blocks rising from the Kedu Plain.",
+      "image": "/countries/indonesia/landmarks/indonesia-borobudur-01.svg"
+    },
+    {
+      "name": "Bali",
+      "location": "Lesser Sunda Islands",
+      "coordinates": "08°30′S 115°00′E",
+      "description": "Terraced rice fields, temple coastlines and volcanic ridges — the island of a thousand temples.",
+      "image": "/countries/indonesia/landmarks/indonesia-bali-01.svg"
+    },
+    {
+      "name": "Raja Ampat",
+      "location": "West Papua",
+      "coordinates": "00°30′S 130°30′E",
+      "description": "Four great islands adrift in a sea of coral — the most biodiverse marine habitat on Earth.",
+      "image": "/countries/indonesia/landmarks/indonesia-raja-ampat-01.svg"
+    },
+    {
+      "name": "Komodo National Park",
+      "location": "East Nusa Tenggara",
+      "coordinates": "08°35′S 119°29′E",
+      "description": "Pale volcanic islands ruled by the Komodo dragon, the largest living lizard on the planet.",
+      "image": "/countries/indonesia/landmarks/indonesia-komodo-01.svg"
+    },
+    {
+      "name": "Mount Bromo",
+      "location": "East Java",
+      "coordinates": "07°56′S 112°57′E",
+      "description": "An active volcano standing inside a vast caldera of sand, crowned by the Sea of Sand.",
+      "image": "/countries/indonesia/landmarks/indonesia-bromo-01.svg"
+    }
+  ],
+
+  "foods": [
+    {
+      "name": "Rendang",
+      "region": "West Sumatra",
+      "description": "Beef slow-cooked for hours in coconut milk and a complex paste of chilies, lemongrass and spices until deeply caramelized.",
+      "image": "/countries/indonesia/foods/indonesia-rendang-01.svg"
+    },
+    {
+      "name": "Nasi Goreng",
+      "region": "Nationwide",
+      "description": "Indonesia's fragrant wok-fried rice, seasoned with sweet soy, shallots and chili, crowned with a fried egg.",
+      "image": "/countries/indonesia/foods/indonesia-nasi-goreng-01.svg"
+    },
+    {
+      "name": "Satay",
+      "region": "Java",
+      "description": "Skewers of marinated meat grilled over charcoal, glazed with sweet soy and served with peanut sauce.",
+      "image": "/countries/indonesia/foods/indonesia-satay-01.svg"
+    },
+    {
+      "name": "Gado-Gado",
+      "region": "Jakarta",
+      "description": "A vibrant platter of blanched vegetables, tofu and lontong bound together by a rich peanut sauce.",
+      "image": "/countries/indonesia/foods/indonesia-gado-gado-01.svg"
+    },
+    {
+      "name": "Soto",
+      "region": "Nationwide",
+      "description": "A golden spiced broth with chicken, rice noodles and herbs — each region keeps its own beloved version.",
+      "image": "/countries/indonesia/foods/indonesia-soto-01.svg"
+    },
+    {
+      "name": "Pempek",
+      "region": "Palembang",
+      "description": "Savory fish cakes from Sumatra, served with a dark sweet-and-sour sauce of palm sugar and vinegar.",
+      "image": "/countries/indonesia/foods/indonesia-pempek-01.svg"
+    }
+  ],
+
+  "culture": [
+    {
+      "title": "Batik",
+      "category": "Craft",
+      "description": "Wax-resist cloth dyed in intricate patterns, each motif carrying regional and symbolic meaning.",
+      "image": "/countries/indonesia/culture/indonesia-batik-01.svg"
+    },
+    {
+      "title": "Wayang",
+      "category": "Theater",
+      "description": "Shadow puppetry of leather and light, where dalang storytellers animate epics through a screen.",
+      "image": "/countries/indonesia/culture/indonesia-wayang-01.svg"
+    },
+    {
+      "title": "Gamelan",
+      "category": "Music",
+      "description": "Ensembles of bronze gongs, metallophones and drums producing shimmering, interlocking textures.",
+      "image": "/countries/indonesia/culture/indonesia-gamelan-01.svg"
+    },
+    {
+      "title": "Traditional Dance",
+      "category": "Movement",
+      "description": "From the regal Legong of Bali to the war-like Tari Saman, dance carries the archipelago's stories.",
+      "image": "/countries/indonesia/culture/indonesia-dance-01.svg"
+    },
+    {
+      "title": "Traditional Houses",
+      "category": "Architecture",
+      "description": "Saddle-roofed tongkonan and floating rumah panggung — dwellings shaped by climate and kinship.",
+      "image": "/countries/indonesia/culture/indonesia-house-01.svg"
+    },
+    {
+      "title": "Traditional Clothing",
+      "category": "Textile",
+      "description": "Songket, ulos and tenun ikat — woven identities passed down through generations.",
+      "image": "/countries/indonesia/culture/indonesia-clothing-01.svg"
+    }
+  ],
+
+  "timeline": [
+    {
+      "year": "8th Century",
+      "title": "Ancient Kingdoms",
+      "description": "Maritime empires such as Srivijaya and Majapahit dominate the straits, while Borobudur rises from the Kedu Plain."
+    },
+    {
+      "year": "1602",
+      "title": "Colonial Era",
+      "description": "The Dutch East India Company and later the colonial state reshape the archipelago's trade and boundaries."
+    },
+    {
+      "year": "1945",
+      "title": "Independence",
+      "description": "On 17 August 1945, Sukarno and Hatta proclaim Indonesian independence, igniting a revolution."
+    },
+    {
+      "year": "1998 — Present",
+      "title": "Modern Republic",
+      "description": "Reformasi opens a new democratic era; a vast archipelago of seventeen thousand islands finds one voice."
+    }
+  ],
+
+  "gallery": [
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-01.svg",
+      "alt": "Volcanic ridge of Mount Bromo at dawn",
+      "category": "Nature",
+      "span": "wide"
+    },
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-02.svg",
+      "alt": "Borobudur stupas emerging from morning mist",
+      "category": "Architecture"
+    },
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-03.svg",
+      "alt": "Batik artisan working with canting",
+      "category": "Culture"
+    },
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-04.svg",
+      "alt": "Pusaran skyline of Jakarta at night",
+      "category": "Cities",
+      "span": "wide"
+    },
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-05.svg",
+      "alt": "Gamelan bronze instruments in close detail",
+      "category": "Culture"
+    },
+    {
+      "src": "/countries/indonesia/gallery/indonesia-gallery-06.svg",
+      "alt": "Raja Ampat lagoon from above",
+      "category": "Nature"
+    }
+  ],
+
+  "assets": {
+    "flag": "/countries/indonesia/flag/indonesia-flag-01.svg",
+    "hero": "/countries/indonesia/hero/indonesia-hero-01.svg"
+  }
+}
