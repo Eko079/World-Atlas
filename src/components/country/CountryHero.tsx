@@ -4,9 +4,8 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import MonoLabel from "@/components/ui/MonoLabel";
+import { formatCoordinates } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function CountryHero({ country }: { country: Country }) {
   const ref = useRef<HTMLElement>(null);
@@ -41,74 +40,63 @@ export default function CountryHero({ country }: { country: Country }) {
 
       <div className="relative z-10 flex flex-1 flex-col">
         <div className="flex items-center justify-between px-5 pt-28 sm:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: EASE }}
-            className="font-mono text-[11px] uppercase tracking-[0.35em] text-paper/70"
+          <p
+            className="hero-enter font-mono text-[11px] uppercase tracking-[0.35em] text-paper/70"
+            style={{ animationDelay: "0.3s" }}
           >
             World Atlas / {country.geography.region}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="font-mono text-[11px] tracking-[0.3em] text-mist"
+          </p>
+          <p
+            className="hero-enter font-mono text-[11px] tracking-[0.3em] text-mist"
+            style={{ animationDelay: "0.4s" }}
           >
             {String(country.index).padStart(3, "0")} / NATION
-          </motion.p>
+          </p>
         </div>
 
         <div className="relative flex flex-1 flex-col justify-center px-5 sm:px-8">
           <div className="grid lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.8, ease: EASE }}
+              <div
+                className="hero-enter flex items-center gap-3"
+                style={{ animationDelay: "0.35s" }}
               >
                 <MonoLabel tone="accent" className="flex items-center gap-3">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                  {country.officialName}
+                  {country.identity.officialName}
                 </MonoLabel>
-              </motion.div>
-
-              <div className="mt-4 overflow-hidden">
-                <motion.h1
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.45, duration: 1.1, ease: EASE }}
-                  className="font-display text-[20vw] font-semibold uppercase leading-[0.85] tracking-tight text-paper sm:text-[15vw] lg:text-[13rem]"
-                >
-                  {country.name}
-                </motion.h1>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.9, ease: EASE }}
-                className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-3"
+              <div className="mt-4 overflow-hidden">
+                <h1
+                  className="hero-title font-display text-[20vw] font-semibold uppercase leading-[0.85] tracking-tight text-paper sm:text-[15vw] lg:text-[13rem]"
+                  style={{ animationDelay: "0.45s" }}
+                >
+                  {country.name}
+                </h1>
+              </div>
+
+              <div
+                className="hero-enter mt-6 flex flex-wrap items-center gap-x-10 gap-y-3"
+                style={{ animationDelay: "1.2s" }}
               >
                 <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-paper">
-                  {country.localName}
+                  {country.identity.localName}
                 </span>
                 <span className="h-3 w-px bg-white/20" aria-hidden="true" />
                 <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-mist">
-                  {country.geography.coordinates}
+                  {formatCoordinates(country.geography.representativeCoordinates, "deg")}
                 </span>
                 <span className="h-3 w-px bg-white/20" aria-hidden="true" />
                 <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-mist">
                   {country.geography.region}
                 </span>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3, duration: 0.9, ease: EASE }}
-              className="mt-10 hidden lg:block"
+            <div
+              className="hero-enter mt-10 hidden lg:block"
+              style={{ animationDelay: "1.3s" }}
             >
               <div className="flex flex-col items-center gap-4">
                 <div className="aspect-[2/3] w-28 overflow-hidden border border-white/15">
@@ -122,18 +110,16 @@ export default function CountryHero({ country }: { country: Country }) {
                   <span className="font-display text-3xl font-semibold text-paper">
                     {country.codes.alpha3}
                   </span>
-                  <MonoLabel>{country.capital.name}</MonoLabel>
+                  <MonoLabel>{country.capital.primaryDisplay}</MonoLabel>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.7, duration: 1 }}
-          className="relative z-10 flex items-center justify-between px-5 pb-8 sm:px-8"
+        <div
+          className="hero-fade relative z-10 flex items-center justify-between px-5 pb-8 sm:px-8"
+          style={{ animationDelay: "1.7s" }}
         >
           <div className="flex items-center gap-8">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-mist/70">
@@ -141,7 +127,7 @@ export default function CountryHero({ country }: { country: Country }) {
             </span>
             <span className="hidden h-3 w-px bg-white/20 sm:block" aria-hidden="true" />
             <span className="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-mist/70 sm:block">
-              Capital — {country.capital.name}
+              Capital — {country.capital.primaryDisplay}
             </span>
           </div>
           <div className="flex flex-col items-center gap-2">
@@ -155,7 +141,7 @@ export default function CountryHero({ country }: { country: Country }) {
               <ChevronDown className="h-4 w-4 text-mist" />
             </motion.span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

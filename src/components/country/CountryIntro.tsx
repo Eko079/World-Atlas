@@ -1,7 +1,7 @@
 import CountrySection from "@/components/country/CountrySection";
 import Reveal from "@/components/shared/Reveal";
 import StatBlock from "@/components/shared/StatBlock";
-import { formatArea } from "@/lib/utils";
+import { formatArea, formatNumber } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
 
 export default function CountryIntro({ country }: { country: Country }) {
@@ -32,19 +32,28 @@ export default function CountryIntro({ country }: { country: Country }) {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
           <Reveal delay={0.05}>
             <StatBlock
-              value={`${(country.geography.islands ?? 0).toLocaleString("en-US").replace(/,/g, ",")}+`}
+              value={`${formatNumber(country.geography.islandCount.value)}+`}
               label="Islands"
               accent
             />
           </Reveal>
           <Reveal delay={0.1}>
-            <StatBlock value="38" label="Provinces" />
+            <StatBlock
+              value={String(country.geography.provinces?.value ?? "—")}
+              label="Provinces"
+            />
           </Reveal>
           <Reveal delay={0.15}>
-            <StatBlock value="3" label="Time Zones" />
+            <StatBlock
+              value={String(country.geography.timeZones ?? "—")}
+              label="Time Zones"
+            />
           </Reveal>
           <Reveal delay={0.2}>
-            <StatBlock value={formatArea(country.geography.areaKm2)} label="Land Area" />
+            <StatBlock
+              value={formatArea(country.geography.area, true)}
+              label="Land Area"
+            />
           </Reveal>
         </div>
       </div>

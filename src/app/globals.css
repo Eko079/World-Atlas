@@ -78,3 +78,82 @@
 .h-scroll > * {
   scroll-snap-align: start;
 }
+
+/* Screen-in veil — server-rendered, CSS-only fade-out (never blanks) */
+@keyframes veil-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.screen-veil {
+  animation: veil-out 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* CSS-only hero entrance (visible without JS, JS-disabled safe) */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-enter {
+  opacity: 0;
+  animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero-fade {
+  opacity: 0;
+  animation: hero-fade 1s ease-out both;
+}
+
+@keyframes hero-title {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.hero-title {
+  transform: translateY(110%);
+  animation: hero-title 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.pulse-soft {
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}
+
+/* No-JS fallback: reveal all animation-gated content */
+html:not(.has-js) [style*="opacity: 0"],
+html:not(.has-js) [style*="opacity:0"] {
+  opacity: 1 !important;
+}

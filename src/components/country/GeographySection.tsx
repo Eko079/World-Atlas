@@ -2,7 +2,8 @@ import CountrySection from "@/components/country/CountrySection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import Reveal from "@/components/shared/Reveal";
 import MonoLabel from "@/components/ui/MonoLabel";
-import { formatArea, formatNumber } from "@/lib/utils";
+import DataSourceBadge from "@/components/shared/DataSourceBadge";
+import { formatArea, formatCoordinates, formatNumber } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
 
 function GeoRow({ label, value }: { label: string; value: string }) {
@@ -32,11 +33,21 @@ export default function GeographySection({ country }: { country: Country }) {
             <GeoRow label="Continent" value={g.continent} />
             <GeoRow label="Region" value={g.region} />
             <GeoRow label="Subregion" value={g.subregion ?? "—"} />
-            <GeoRow label="Land Area" value={formatArea(g.areaKm2)} />
-            <GeoRow label="Water Area" value={`${formatNumber(g.waterKm2 ?? 0)} km²`} />
-            <GeoRow label="Islands" value={`${formatNumber(g.islands ?? 0)}+`} />
+            <GeoRow
+              label="Coordinates"
+              value={formatCoordinates(g.representativeCoordinates, "deg")}
+            />
+            <GeoRow label="Land Area" value={formatArea(g.area, true)} />
+            <GeoRow label="Water Area" value={formatArea(g.waterArea, true)} />
+            <GeoRow label="Islands" value={`${formatNumber(g.islandCount.value)}+`} />
+            <GeoRow label="Provinces" value={String(g.provinces?.value ?? "—")} />
+            <GeoRow label="Time Zones" value={String(g.timeZones ?? "—")} />
             <GeoRow label="Highest Point" value={g.highestPoint ?? "—"} />
             <GeoRow label="Longest River" value={g.longestRiver ?? "—"} />
+            <div className="flex flex-wrap gap-5 pt-4">
+              <DataSourceBadge sourced={g.area} label="Area source" />
+              <DataSourceBadge sourced={g.islandCount} label="Island count source" />
+            </div>
           </Reveal>
         </div>
 

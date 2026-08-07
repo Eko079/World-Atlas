@@ -1,14 +1,16 @@
 {
+  "schemaVersion": "1.1",
+  "id": "indonesia",
   "slug": "indonesia",
   "index": 1,
   "name": "Indonesia",
-  "officialName": "Republic of Indonesia",
-  "localName": "Republik Indonesia",
 
   "codes": {
     "alpha2": "ID",
     "alpha3": "IDN",
-    "numeric": "360"
+    "numeric": "360",
+    "callingCode": "+62",
+    "internetTld": ".id"
   },
 
   "identity": {
@@ -17,19 +19,64 @@
     "motto": "Bhinneka Tunggal Ika",
     "anthem": "Indonesia Raya",
     "independence": "17 August 1945",
-    "capital": "Jakarta",
-    "callingCode": "+62",
-    "internetTld": ".id"
+    "demonym": "Indonesian"
   },
 
   "geography": {
     "continent": "Asia",
     "region": "Southeast Asia",
     "subregion": "Maritime Southeast Asia",
-    "areaKm2": 1904569,
-    "waterKm2": 93000,
-    "coordinates": "00°00′S 115°00′E",
-    "islands": 17000,
+    "area": {
+      "value": 1904569,
+      "unit": "km²",
+      "referenceYear": 2025,
+      "freshness": "slow",
+      "source": {
+        "name": "Badan Pusat Statistik (BPS)",
+        "publication": "Luas Wilayah Indonesia",
+        "url": "https://www.bps.go.id",
+        "accessedAt": "2026-08-07"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "waterArea": {
+      "value": 93000,
+      "unit": "km²",
+      "referenceYear": 2025,
+      "source": {
+        "name": "Badan Pusat Statistik (BPS)",
+        "publication": "Statistik Indonesia"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "islandCount": {
+      "value": 17380,
+      "referenceYear": 2024,
+      "freshness": "slow",
+      "source": {
+        "name": "Geospatial Information Agency (BIG)",
+        "publication": "Survei Penataan Nama Rupabumi",
+        "url": "https://www.big.go.id",
+        "accessedAt": "2026-08-07"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "provinces": {
+      "value": 38,
+      "referenceYear": 2022,
+      "source": {
+        "name": "Ministry of Home Affairs",
+        "publication": "Pembentukan Provinsi Papua Selatan, Papua Tengah, dan Papua Pegunungan"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "timeZones": 3,
+    "representativeCoordinates": {
+      "latitude": -2,
+      "longitude": 118,
+      "label": "Approximate center of the archipelago",
+      "methodology": "Centroid of Indonesian maritime territory"
+    },
     "highestPoint": "Puncak Jaya — 4,884 m",
     "longestRiver": "Kapuas River — 1,143 km",
     "neighbors": ["Malaysia", "Papua New Guinea", "Timor-Leste"],
@@ -37,57 +84,175 @@
   },
 
   "capital": {
-    "name": "Jakarta",
-    "coordinates": "06°12′S 106°49′E",
-    "population": 10680000,
-    "province": "Special Capital Region of Jakarta",
+    "primaryDisplay": "Jakarta",
+    "status": "Legal capital, with the administrative seat transitioning to Nusantara",
+    "currentAdministrativeCenter": "Jakarta (special capital region)",
+    "designatedCapital": "Nusantara",
+    "futureCapital": "Nusantara (IKN), East Kalimantan",
+    "transitionStatus": "In progress — staged relocation of government functions",
+    "transitionTargetYear": 2045,
+    "notes": "Under Law 3/2022 on the State Capital (UU IKN), Nusantara is designated to replace Jakarta. Jakarta remains the de jure capital until a Presidential Decree formalizes the transfer, with the move proceeding in stages toward full consolidation.",
+    "coordinates": {
+      "latitude": -6.2088,
+      "longitude": 106.8456
+    },
+    "population": {
+      "value": 10680000,
+      "referenceYear": 2020,
+      "source": {
+        "name": "Badan Pusat Statistik (BPS)",
+        "publication": "Sensus Penduduk 2020"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "province": "Special Capital Region of Jakarta (DKI Jakarta)",
     "timezone": "WIB (UTC+7)",
     "description": "A dense metropolis on the northwest coast of Java, Jakarta is Indonesia's political and economic heart — a city of layered histories, waterfronts, and relentless energy.",
-    "image": "/countries/indonesia/cities/indonesia-jakarta-01.svg"
+    "image": "/countries/indonesia/cities/indonesia-jakarta-01.svg",
+    "source": {
+      "name": "Undang-Undang Ibu Kota Negara (Law 3/2022)",
+      "publication": "State Gazette of the Republic of Indonesia"
+    },
+    "lastVerifiedAt": "2026-08-07"
   },
 
   "population": {
-    "total": 285000000,
-    "density": 149,
-    "urbanPercentage": 57,
+    "total": {
+      "value": 284670000,
+      "unit": "people",
+      "referenceYear": 2025,
+      "freshness": "annual",
+      "source": {
+        "name": "Badan Pusat Statistik (BPS)",
+        "publication": "Proyeksi Penduduk Indonesia 2020–2050",
+        "url": "https://www.bps.go.id",
+        "accessedAt": "2026-08-07"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "density": {
+      "value": 149,
+      "unit": "people/km²",
+      "referenceYear": 2025,
+      "source": {
+        "name": "Badan Pusat Statistik (BPS)"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "urbanPercentage": {
+      "value": 57,
+      "unit": "%",
+      "referenceYear": 2023,
+      "source": {
+        "name": "World Bank",
+        "publication": "Urban population (% of total)"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
     "ethnicGroups": ["Javanese", "Sundanese", "Malay", "Batak", "Madurese", "Betawi", "Minangkabau", "Buginese", "Balinese", "Dayak"]
   },
 
   "languages": {
     "official": ["Bahasa Indonesia"],
     "regional": ["Javanese", "Sundanese", "Madurese", "Balinese", "Buginese", "Minangkabau", "Batak", "Acehnese", "Papuan Languages"],
-    "livingCount": 700
+    "livingCount": {
+      "value": 718,
+      "unit": "living languages",
+      "referenceYear": 2024,
+      "source": {
+        "name": "Ethnologue (SIL International)",
+        "publication": "Languages of Indonesia"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    }
   },
 
-  "currency": {
-    "name": "Indonesian Rupiah",
-    "code": "IDR",
-    "symbol": "Rp",
-    "gdp": 1425000000000,
-    "gdpPerCapita": 5100,
+  "government": {
+    "form": "Unitary presidential republic",
+    "leadership": [
+      {
+        "id": "prabowo-subianto",
+        "name": "Prabowo Subianto",
+        "position": "President",
+        "constitutionalRoles": ["Head of State", "Head of Government", "Commander-in-Chief"],
+        "term": {
+          "start": "2024-10-20"
+        },
+        "image": "/countries/indonesia/leaders/indonesia-president-01.svg",
+        "source": {
+          "name": "General Elections Commission (KPU)",
+          "publication": "Pemilihan Umum 2024"
+        },
+        "lastVerifiedAt": "2026-08-07"
+      },
+      {
+        "id": "gibran-rakabuming-raka",
+        "name": "Gibran Rakabuming Raka",
+        "position": "Vice President",
+        "constitutionalRoles": ["Deputy Head of State"],
+        "term": {
+          "start": "2024-10-20"
+        },
+        "image": "/countries/indonesia/leaders/indonesia-vice-president-01.svg",
+        "source": {
+          "name": "General Elections Commission (KPU)",
+          "publication": "Pemilihan Umum 2024"
+        },
+        "lastVerifiedAt": "2026-08-07"
+      }
+    ]
+  },
+
+  "economy": {
+    "currency": {
+      "name": "Indonesian Rupiah",
+      "code": "IDR",
+      "symbol": "Rp"
+    },
+    "gdp": {
+      "value": 23821,
+      "unit": "trillion",
+      "currency": "IDR",
+      "priceBasis": "Nominal",
+      "referenceYear": 2025,
+      "freshness": "annual",
+      "source": {
+        "name": "International Monetary Fund",
+        "publication": "World Economic Outlook, April 2025",
+        "url": "https://www.imf.org"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "gdpPerCapita": {
+      "value": 83.7,
+      "unit": "million",
+      "currency": "IDR",
+      "priceBasis": "Nominal",
+      "referenceYear": 2025,
+      "source": {
+        "name": "International Monetary Fund",
+        "publication": "World Economic Outlook, April 2025"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
+    "gdpPerCapitaUsd": {
+      "value": 4674,
+      "currency": "USD",
+      "priceBasis": "Nominal",
+      "referenceYear": 2025,
+      "source": {
+        "name": "International Monetary Fund",
+        "publication": "World Economic Outlook, April 2025"
+      },
+      "lastVerifiedAt": "2026-08-07"
+    },
     "industries": ["Petroleum & Gas", "Mining", "Textiles", "Automotive", "Agriculture", "Electronics"],
     "exports": ["Palm Oil", "Coal", "Natural Gas", "Electronics", "Rubber", "Coffee", "Nickel"]
   },
 
-  "leadership": [
-    {
-      "role": "Head of State",
-      "name": "Prabowo Subianto",
-      "photo": "/countries/indonesia/leaders/indonesia-president-01.svg",
-      "term": "2024 — Present",
-      "party": "President"
-    },
-    {
-      "role": "Vice President",
-      "name": "Gibran Rakabuming Raka",
-      "photo": "/countries/indonesia/leaders/indonesia-vice-president-01.svg",
-      "term": "2024 — Present",
-      "party": "Vice President"
-    }
-  ],
-
   "landmarks": [
     {
+      "id": "borobudur",
       "name": "Borobudur",
       "location": "Central Java",
       "coordinates": "07°36′S 110°12′E",
@@ -95,6 +260,7 @@
       "image": "/countries/indonesia/landmarks/indonesia-borobudur-01.svg"
     },
     {
+      "id": "bali",
       "name": "Bali",
       "location": "Lesser Sunda Islands",
       "coordinates": "08°30′S 115°00′E",
@@ -102,6 +268,7 @@
       "image": "/countries/indonesia/landmarks/indonesia-bali-01.svg"
     },
     {
+      "id": "raja-ampat",
       "name": "Raja Ampat",
       "location": "West Papua",
       "coordinates": "00°30′S 130°30′E",
@@ -109,6 +276,7 @@
       "image": "/countries/indonesia/landmarks/indonesia-raja-ampat-01.svg"
     },
     {
+      "id": "komodo",
       "name": "Komodo National Park",
       "location": "East Nusa Tenggara",
       "coordinates": "08°35′S 119°29′E",
@@ -116,6 +284,7 @@
       "image": "/countries/indonesia/landmarks/indonesia-komodo-01.svg"
     },
     {
+      "id": "bromo",
       "name": "Mount Bromo",
       "location": "East Java",
       "coordinates": "07°56′S 112°57′E",
@@ -126,36 +295,42 @@
 
   "foods": [
     {
+      "id": "rendang",
       "name": "Rendang",
       "region": "West Sumatra",
       "description": "Beef slow-cooked for hours in coconut milk and a complex paste of chilies, lemongrass and spices until deeply caramelized.",
       "image": "/countries/indonesia/foods/indonesia-rendang-01.svg"
     },
     {
+      "id": "nasi-goreng",
       "name": "Nasi Goreng",
       "region": "Nationwide",
       "description": "Indonesia's fragrant wok-fried rice, seasoned with sweet soy, shallots and chili, crowned with a fried egg.",
       "image": "/countries/indonesia/foods/indonesia-nasi-goreng-01.svg"
     },
     {
+      "id": "satay",
       "name": "Satay",
       "region": "Java",
       "description": "Skewers of marinated meat grilled over charcoal, glazed with sweet soy and served with peanut sauce.",
       "image": "/countries/indonesia/foods/indonesia-satay-01.svg"
     },
     {
+      "id": "gado-gado",
       "name": "Gado-Gado",
       "region": "Jakarta",
       "description": "A vibrant platter of blanched vegetables, tofu and lontong bound together by a rich peanut sauce.",
       "image": "/countries/indonesia/foods/indonesia-gado-gado-01.svg"
     },
     {
+      "id": "soto",
       "name": "Soto",
       "region": "Nationwide",
       "description": "A golden spiced broth with chicken, rice noodles and herbs — each region keeps its own beloved version.",
       "image": "/countries/indonesia/foods/indonesia-soto-01.svg"
     },
     {
+      "id": "pempek",
       "name": "Pempek",
       "region": "Palembang",
       "description": "Savory fish cakes from Sumatra, served with a dark sweet-and-sour sauce of palm sugar and vinegar.",
@@ -165,36 +340,42 @@
 
   "culture": [
     {
+      "id": "batik",
       "title": "Batik",
       "category": "Craft",
       "description": "Wax-resist cloth dyed in intricate patterns, each motif carrying regional and symbolic meaning.",
       "image": "/countries/indonesia/culture/indonesia-batik-01.svg"
     },
     {
+      "id": "wayang",
       "title": "Wayang",
       "category": "Theater",
       "description": "Shadow puppetry of leather and light, where dalang storytellers animate epics through a screen.",
       "image": "/countries/indonesia/culture/indonesia-wayang-01.svg"
     },
     {
+      "id": "gamelan",
       "title": "Gamelan",
       "category": "Music",
       "description": "Ensembles of bronze gongs, metallophones and drums producing shimmering, interlocking textures.",
       "image": "/countries/indonesia/culture/indonesia-gamelan-01.svg"
     },
     {
+      "id": "dance",
       "title": "Traditional Dance",
       "category": "Movement",
       "description": "From the regal Legong of Bali to the war-like Tari Saman, dance carries the archipelago's stories.",
       "image": "/countries/indonesia/culture/indonesia-dance-01.svg"
     },
     {
+      "id": "houses",
       "title": "Traditional Houses",
       "category": "Architecture",
       "description": "Saddle-roofed tongkonan and floating rumah panggung — dwellings shaped by climate and kinship.",
       "image": "/countries/indonesia/culture/indonesia-house-01.svg"
     },
     {
+      "id": "clothing",
       "title": "Traditional Clothing",
       "category": "Textile",
       "description": "Songket, ulos and tenun ikat — woven identities passed down through generations.",
@@ -204,21 +385,25 @@
 
   "timeline": [
     {
+      "id": "ancient-kingdoms",
       "year": "8th Century",
       "title": "Ancient Kingdoms",
       "description": "Maritime empires such as Srivijaya and Majapahit dominate the straits, while Borobudur rises from the Kedu Plain."
     },
     {
+      "id": "colonial-era",
       "year": "1602",
       "title": "Colonial Era",
       "description": "The Dutch East India Company and later the colonial state reshape the archipelago's trade and boundaries."
     },
     {
+      "id": "independence",
       "year": "1945",
       "title": "Independence",
       "description": "On 17 August 1945, Sukarno and Hatta proclaim Indonesian independence, igniting a revolution."
     },
     {
+      "id": "modern-republic",
       "year": "1998 — Present",
       "title": "Modern Republic",
       "description": "Reformasi opens a new democratic era; a vast archipelago of seventeen thousand islands finds one voice."
@@ -227,41 +412,97 @@
 
   "gallery": [
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-01.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-01.svg",
       "alt": "Volcanic ridge of Mount Bromo at dawn",
       "category": "Nature",
       "span": "wide"
     },
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-02.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-02.svg",
       "alt": "Borobudur stupas emerging from morning mist",
       "category": "Architecture"
     },
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-03.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-03.svg",
       "alt": "Batik artisan working with canting",
       "category": "Culture"
     },
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-04.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-04.svg",
       "alt": "Pusaran skyline of Jakarta at night",
       "category": "Cities",
       "span": "wide"
     },
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-05.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-05.svg",
       "alt": "Gamelan bronze instruments in close detail",
       "category": "Culture"
     },
     {
+      "path": "/countries/indonesia/gallery/indonesia-gallery-06.svg",
       "src": "/countries/indonesia/gallery/indonesia-gallery-06.svg",
       "alt": "Raja Ampat lagoon from above",
       "category": "Nature"
     }
   ],
 
+  "sources": [
+    {
+      "name": "Badan Pusat Statistik (BPS)",
+      "publication": "Proyeksi Penduduk Indonesia 2020–2050",
+      "url": "https://www.bps.go.id",
+      "accessedAt": "2026-08-07"
+    },
+    {
+      "name": "Geospatial Information Agency (BIG)",
+      "publication": "Survei Penataan Nama Rupabumi",
+      "url": "https://www.big.go.id",
+      "accessedAt": "2026-08-07"
+    },
+    {
+      "name": "International Monetary Fund",
+      "publication": "World Economic Outlook, April 2025",
+      "url": "https://www.imf.org",
+      "accessedAt": "2026-08-07"
+    },
+    {
+      "name": "World Bank",
+      "publication": "World Development Indicators",
+      "url": "https://data.worldbank.org",
+      "accessedAt": "2026-08-07"
+    },
+    {
+      "name": "General Elections Commission (KPU)",
+      "publication": "Pemilihan Umum 2024",
+      "url": "https://www.kpu.go.id",
+      "accessedAt": "2026-08-07"
+    },
+    {
+      "name": "Undang-Undang Ibu Kota Negara (Law 3/2022)",
+      "publication": "State Gazette of the Republic of Indonesia"
+    },
+    {
+      "name": "Ethnologue (SIL International)",
+      "publication": "Languages of Indonesia",
+      "url": "https://www.ethnologue.com",
+      "accessedAt": "2026-08-07"
+    }
+  ],
+
   "assets": {
     "flag": "/countries/indonesia/flag/indonesia-flag-01.svg",
     "hero": "/countries/indonesia/hero/indonesia-hero-01.svg"
+  },
+
+  "meta": {
+    "schemaVersion": "1.1",
+    "createdAt": "2026-08-01",
+    "updatedAt": "2026-08-07",
+    "lastReviewedAt": "2026-08-07"
   }
 }

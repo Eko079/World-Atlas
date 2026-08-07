@@ -5,7 +5,7 @@ import StatBlock from "@/components/shared/StatBlock";
 import Button from "@/components/ui/Button";
 import MonoLabel from "@/components/ui/MonoLabel";
 import CountryFlag from "@/components/shared/CountryFlag";
-import { formatArea, formatCompact } from "@/lib/utils";
+import { formatArea, formatCompact } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
 
 export default function FeaturedNation({ country }: { country: Country }) {
@@ -59,7 +59,7 @@ export default function FeaturedNation({ country }: { country: Country }) {
                     </h3>
                   </Link>
                   <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.3em] text-mist">
-                    {country.officialName} — {country.geography.region}
+                    {country.identity.officialName} — {country.geography.region}
                   </p>
                   <p className="mt-6 max-w-md text-sm leading-relaxed text-mist">
                     An archipelago of seventeen thousand islands strung across
@@ -71,7 +71,7 @@ export default function FeaturedNation({ country }: { country: Country }) {
                     <div>
                       <MonoLabel>Capital</MonoLabel>
                       <p className="mt-1 font-mono text-sm text-paper">
-                        {country.capital.name}
+                        {country.capital.primaryDisplay}
                       </p>
                     </div>
                     <div>
@@ -87,16 +87,16 @@ export default function FeaturedNation({ country }: { country: Country }) {
               <div>
                 <div className="grid grid-cols-3 gap-6">
                   <StatBlock
-                    value={`${formatCompact(country.population.total)}+`}
+                    value={`${formatCompact(country.population.total.value)}+`}
                     label="Population"
                     accent
                   />
                   <StatBlock
-                    value={formatArea(country.geography.areaKm2)}
+                    value={formatArea(country.geography.area)}
                     label="Land Area"
                   />
                   <StatBlock
-                    value={`${formatCompact(country.geography.islands ?? 0)}+`}
+                    value={`${formatCompact(country.geography.islandCount.value)}+`}
                     label="Islands"
                   />
                 </div>

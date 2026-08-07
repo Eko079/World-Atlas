@@ -7,6 +7,14 @@ import type { Country } from "@/types/country";
 
 export default function LanguagesSection({ country }: { country: Country }) {
   const l = country.languages;
+  const livingCount = l.livingCount?.value;
+  const livingLabel =
+    typeof livingCount === "number" ? `${livingCount}+` : "Data unavailable";
+  const regionalShown = l.regional?.length ?? 0;
+  const moreCount =
+    typeof livingCount === "number" && regionalShown > 0
+      ? Math.max(0, livingCount - regionalShown)
+      : 0;
   return (
     <CountrySection id="languages" index="07">
       <div className="grid gap-14 lg:grid-cols-2 lg:gap-24">
@@ -20,7 +28,7 @@ export default function LanguagesSection({ country }: { country: Country }) {
         <div className="flex flex-col gap-10">
           <Reveal>
             <StatBlock
-              value={`${l.livingCount ?? 700}+`}
+              value={livingLabel}
               label="Living Languages"
               accent
             />
@@ -57,7 +65,7 @@ export default function LanguagesSection({ country }: { country: Country }) {
                 </span>
               ))}
               <span className="border border-white/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-mist/50">
-                + {Math.max(0, (l.livingCount ?? 700) - 9)} more
+                + {moreCount} more
               </span>
             </div>
           </Reveal>

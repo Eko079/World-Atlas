@@ -26,6 +26,11 @@ export default function RootLayout({
   return (
       <html lang="en" data-scroll-behavior="smooth">
       <body className="bg-ink text-paper antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add("has-js")`
+          }}
+        />
         <Providers>
           <a
             href="#main"

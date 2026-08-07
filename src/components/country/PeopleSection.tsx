@@ -3,14 +3,18 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import Reveal from "@/components/shared/Reveal";
 import StatBlock from "@/components/shared/StatBlock";
 import MonoLabel from "@/components/ui/MonoLabel";
-import { formatCompact, formatNumber } from "@/lib/utils";
+import DataSourceBadge from "@/components/shared/DataSourceBadge";
+import { formatCompact, formatNumber } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
 
 export default function PeopleSection({ country }: { country: Country }) {
   const p = country.population;
+  const totalValue = p.total?.value;
+  const densityValue = p.density?.value ?? 0;
+  const urbanValue = p.urbanPercentage?.value ?? 0;
   const maxDensity = 150;
-  const densityBar = Math.min(100, ((p.density ?? 0) / maxDensity) * 100);
-  const urbanBar = p.urbanPercentage ?? 0;
+  const densityBar = Math.min(100, (densityValue / maxDensity) * 100);
+  const urbanBar = urbanValue;
 
   return (
     <CountrySection id="people" index="06">
@@ -24,13 +28,16 @@ export default function PeopleSection({ country }: { country: Country }) {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
           <Reveal>
             <StatBlock
-              value={`${formatCompact(p.total)}`}
+              value={`${formatCompact(totalValue)}`}
               label="Total Population"
               accent
             />
+            <div className="mt-3">
+              <DataSourceBadge sourced={p.total} />
+            </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <StatBlock value={formatNumber(p.density ?? 0)} label="Per km²" />
+            <StatBlock value={formatNumber(densityValue)} label="Per km²" />
           </Reveal>
         </div>
 
@@ -39,7 +46,7 @@ export default function PeopleSection({ country }: { country: Country }) {
             <div className="flex items-end justify-between">
               <MonoLabel>Urban Population</MonoLabel>
               <span className="font-display text-3xl font-semibold text-paper">
-                {p.urbanPercentage}%
+                {urbanValue}%
               </span>
             </div>
             <div className="mt-4 h-px w-full bg-white/10">
@@ -54,7 +61,7 @@ export default function PeopleSection({ country }: { country: Country }) {
             <div className="flex items-end justify-between">
               <MonoLabel>Population Density</MonoLabel>
               <span className="font-display text-3xl font-semibold text-paper">
-                {formatNumber(p.density ?? 0)} / km²
+                {formatNumber(densityValue)} / km²
               </span>
             </div>
             <div className="mt-4 h-px w-full bg-white/10">

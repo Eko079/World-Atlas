@@ -56,8 +56,8 @@ export default function IdentitySection({ country }: { country: Country }) {
             <FactRow label="Local Name" value={country.identity.localName} />
             <FactRow label="ISO Alpha-2" value={country.codes.alpha2} />
             <FactRow label="ISO Alpha-3" value={country.codes.alpha3} />
-            <FactRow label="Calling Code" value={country.identity.callingCode} />
-            <FactRow label="Internet TLD" value={country.identity.internetTld} />
+            <FactRow label="Calling Code" value={country.codes.callingCode} />
+            <FactRow label="Internet TLD" value={country.codes.internetTld} />
             <FactRow label="Motto" value={country.identity.motto} />
             <FactRow label="Anthem" value={country.identity.anthem} />
             <div className="py-4">

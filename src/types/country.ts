@@ -1,17 +1,70 @@
+export type FreshnessClass =
+  | "static"
+  | "slow"
+  | "annual"
+  | "frequent"
+  | "political";
+
+export interface DataSource {
+  name: string;
+  publication?: string;
+  url?: string;
+  publishedAt?: string;
+  accessedAt?: string;
+}
+
+export interface SourcedValue<T> {
+  value: T;
+  unit?: string;
+  referenceYear?: number;
+  referenceDate?: string;
+  source?: DataSource;
+  lastVerifiedAt?: string;
+  freshness?: FreshnessClass;
+}
+
+export interface GeoCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
+export interface RepresentativeCoordinates extends GeoCoordinates {
+  label?: string;
+  methodology?: string;
+}
+
 export interface CountryCodes {
   alpha2: string;
   alpha3: string;
   numeric?: string;
+  callingCode: string;
+  internetTld: string;
+}
+
+export interface CountryIdentity {
+  officialName: string;
+  localName: string;
+  motto: string;
+  anthem: string;
+  independence: string;
+  demonym?: string;
+}
+
+export interface AreaValue {
+  value: number;
+  unit: "km2" | "km²" | string;
 }
 
 export interface CountryGeography {
   continent: string;
   region: string;
   subregion?: string;
-  areaKm2: number;
-  waterKm2?: number;
-  coordinates?: string;
-  islands?: number;
+  area: AreaValue & SourcedValue<number>;
+  waterArea?: AreaValue & SourcedValue<number>;
+  islandCount: SourcedValue<number>;
+  provinces?: SourcedValue<number>;
+  timeZones?: number;
+  representativeCoordinates?: RepresentativeCoordinates;
   highestPoint?: string;
   longestRiver?: string;
   neighbors?: string[];
@@ -19,58 +72,80 @@ export interface CountryGeography {
 }
 
 export interface CapitalInfo {
-  name: string;
-  coordinates?: string;
-  population?: number;
+  primaryDisplay: string;
+  status: string;
+  currentAdministrativeCenter?: string;
+  designatedCapital?: string;
+  futureCapital?: string;
+  transitionStatus?: string;
+  transitionTargetYear?: number;
+  notes?: string;
+  coordinates?: GeoCoordinates;
+  population?: SourcedValue<number>;
   province?: string;
   timezone?: string;
   description?: string;
   image?: string;
+  source?: DataSource;
+  lastVerifiedAt?: string;
 }
 
-export interface PopulationInfo {
-  total: number;
-  density?: number;
-  urbanPercentage?: number;
+export interface CountryPopulation {
+  total: SourcedValue<number>;
+  density?: SourcedValue<number>;
+  urbanPercentage?: SourcedValue<number>;
   ethnicGroups?: string[];
 }
 
 export interface LanguageInfo {
   official: string[];
   regional?: string[];
-  livingCount?: number;
+  livingCount?: SourcedValue<number>;
 }
 
 export interface CurrencyInfo {
   name: string;
   code: string;
   symbol: string;
-  gdp?: number;
-  gdpPerCapita?: number;
+}
+
+export interface EconomyStat extends SourcedValue<number> {
+  currency: string;
+  priceBasis?: string;
+}
+
+export interface CountryEconomy {
+  currency: CurrencyInfo;
+  gdp?: EconomyStat;
+  gdpPerCapita?: EconomyStat;
+  gdpPerCapitaUsd?: EconomyStat;
   industries?: string[];
   exports?: string[];
 }
 
-export interface IdentityInfo {
-  officialName: string;
-  localName: string;
-  motto: string;
-  anthem: string;
-  independence: string;
-  capital: string;
-  callingCode: string;
-  internetTld: string;
+export interface LeaderTerm {
+  start: string;
+  end?: string;
 }
 
 export interface Leader {
-  role: string;
+  id: string;
   name: string;
-  photo?: string;
-  term: string;
-  party?: string;
+  position: string;
+  constitutionalRoles?: string[];
+  term: LeaderTerm;
+  image?: string;
+  source?: DataSource;
+  lastVerifiedAt?: string;
+}
+
+export interface CountryGovernment {
+  form: string;
+  leadership: Leader[];
 }
 
 export interface Landmark {
+  id: string;
   name: string;
   location: string;
   coordinates?: string;
@@ -79,6 +154,7 @@ export interface Landmark {
 }
 
 export interface Food {
+  id: string;
   name: string;
   region: string;
   description: string;
@@ -86,6 +162,7 @@ export interface Food {
 }
 
 export interface CultureItem {
+  id: string;
   title: string;
   category: string;
   description: string;
@@ -93,16 +170,35 @@ export interface CultureItem {
 }
 
 export interface TimelineEvent {
+  id: string;
   year: string;
   title: string;
   description: string;
 }
 
-export interface GalleryImage {
-  src: string;
+export interface MediaAsset {
+  path: string;
   alt: string;
-  category: string;
+  width?: number;
+  height?: number;
+  source?: string;
+  sourceUrl?: string;
+  author?: string;
+  license?: string;
+  downloadedAt?: string;
+}
+
+export interface GalleryImage extends MediaAsset {
+  src: string;
+  category?: string;
   span?: string;
+}
+
+export interface CountryMeta {
+  schemaVersion: string;
+  createdAt?: string;
+  updatedAt: string;
+  lastReviewedAt?: string;
 }
 
 export interface CountryAssets {
@@ -111,37 +207,29 @@ export interface CountryAssets {
 }
 
 export interface Country {
+  schemaVersion: string;
+  id: string;
   slug: string;
   index: number;
   name: string;
-  officialName: string;
-  localName: string;
 
   codes: CountryCodes;
-
-  identity: IdentityInfo;
+  identity: CountryIdentity;
 
   geography: CountryGeography;
-
+  population: CountryPopulation;
+  government: CountryGovernment;
   capital: CapitalInfo;
-
-  population: PopulationInfo;
-
+  economy: CountryEconomy;
   languages: LanguageInfo;
 
-  currency: CurrencyInfo;
-
-  leadership: Leader[];
-
   landmarks: Landmark[];
-
   foods: Food[];
-
   culture: CultureItem[];
-
   timeline: TimelineEvent[];
-
   gallery: GalleryImage[];
 
+  sources?: DataSource[];
   assets: CountryAssets;
+  meta: CountryMeta;
 }

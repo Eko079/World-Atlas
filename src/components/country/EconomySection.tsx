@@ -3,11 +3,12 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import Reveal from "@/components/shared/Reveal";
 import StatBlock from "@/components/shared/StatBlock";
 import MonoLabel from "@/components/ui/MonoLabel";
-import { formatGdp } from "@/lib/utils";
+import DataSourceBadge from "@/components/shared/DataSourceBadge";
+import { formatGdpStat } from "@/lib/countries/format";
 import type { Country } from "@/types/country";
 
 export default function EconomySection({ country }: { country: Country }) {
-  const c = country.currency;
+  const c = country.economy;
   return (
     <CountrySection id="economy" index="08">
       <SectionHeader
@@ -20,19 +21,22 @@ export default function EconomySection({ country }: { country: Country }) {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
           <Reveal>
             <StatBlock
-              value={c.symbol}
-              label={`${c.name} (${c.code})`}
+              value={c.currency.symbol}
+              label={`${c.currency.name} (${c.currency.code})`}
               accent
             />
           </Reveal>
           <Reveal delay={0.08}>
-            <StatBlock value={formatGdp(c.gdp ?? 0)} label="GDP" />
+            <StatBlock value={formatGdpStat(c.gdp)} label="GDP (Nominal)" />
+            <div className="mt-3">
+              <DataSourceBadge sourced={c.gdp} />
+            </div>
           </Reveal>
           <Reveal delay={0.12}>
-            <StatBlock value={formatGdp(c.gdpPerCapita ?? 0)} label="GDP Per Capita" />
+            <StatBlock value={formatGdpStat(c.gdpPerCapita)} label="GDP Per Capita" />
           </Reveal>
           <Reveal delay={0.16}>
-            <StatBlock value={c.code} label="Currency Code" />
+            <StatBlock value={c.currency.code} label="Currency Code" />
           </Reveal>
         </div>
 
