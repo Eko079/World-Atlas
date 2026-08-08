@@ -15,8 +15,18 @@ export const metadata: Metadata = {
   }
 };
 
-export default function HomePage() {
-  const indonesia = getCountryBySlug("indonesia")!;
+export default async function HomePage() {
+  const indonesia = await getCountryBySlug("indonesia");
+
+  if (!indonesia) {
+    return (
+      <div className="flex min-h-[100svh] items-center justify-center bg-ink text-paper">
+        <p className="font-mono text-sm uppercase tracking-[0.3em] text-mist">
+          Nation data unavailable
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const REGIONS = ["Europe", "Africa", "Americas", "Oceania"];
 
-export default function ExplorePage() {
-  const countries = getAllCountries();
+export default async function ExplorePage() {
+  const countries = await getAllCountries();
 
   return (
     <>

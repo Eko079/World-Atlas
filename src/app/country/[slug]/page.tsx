@@ -26,7 +26,7 @@ export async function generateMetadata({
   params
 }: CountryPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const country = getCountryBySlug(slug);
+  const country = await getCountryBySlug(slug);
 
   if (!country) {
     return {
@@ -67,13 +67,13 @@ export async function generateMetadata({
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { slug } = await params;
-  const country = getCountryBySlug(slug);
+  const country = await getCountryBySlug(slug);
 
   if (!country) {
     notFound();
   }
 
-  const sources = getCountrySources(country.slug);
+  const sources = await getCountrySources(country.slug);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Country",

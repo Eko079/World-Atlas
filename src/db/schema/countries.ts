@@ -1,0 +1,42 @@
+import {
+  timestamp,
+  uuid,
+  varchar,
+  text,
+  integer,
+  doublePrecision
+} from "drizzle-orm/pg-core";
+
+export const countries = {
+  id: uuid("id").primaryKey().defaultRandom(),
+  slug: varchar("slug", { length: 100 }).notNull().unique(),
+  name: varchar("name", { length: 255 }).notNull(),
+  officialName: varchar("official_name", { length: 255 }).notNull(),
+  localName: varchar("local_name", { length: 255 }).notNull(),
+  motto: text("motto"),
+  anthem: text("anthem"),
+  independence: varchar("independence", { length: 255 }),
+  demonym: varchar("demonym", { length: 255 }),
+  isoAlpha2: varchar("iso_alpha2", { length: 10 }).notNull().unique(),
+  isoAlpha3: varchar("iso_alpha3", { length: 10 }).notNull().unique(),
+  isoNumeric: varchar("iso_numeric", { length: 10 }),
+  callingCode: varchar("calling_code", { length: 20 }).notNull(),
+  internetTld: varchar("internet_tld", { length: 20 }).notNull(),
+  continent: varchar("continent", { length: 100 }).notNull(),
+  region: varchar("region", { length: 100 }).notNull(),
+  subregion: varchar("subregion", { length: 100 }),
+  summary: text("summary"),
+  representativeLatitude: doublePrecision("representative_latitude"),
+  representativeLongitude: doublePrecision("representative_longitude"),
+  representativeLabel: text("representative_label"),
+  highestPoint: varchar("highest_point", { length: 255 }),
+  longestRiver: varchar("longest_river", { length: 255 }),
+  timeZones: integer("time_zones"),
+  neighbors: varchar("neighbors", { length: 255 }).array(),
+  seas: varchar("seas", { length: 255 }).array(),
+  ethnicGroups: varchar("ethnic_groups", { length: 255 }).array(),
+  index: integer("display_order").notNull().default(1),
+  schemaVersion: varchar("schema_version", { length: 20 }).notNull().default("1.1"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull()
+};
