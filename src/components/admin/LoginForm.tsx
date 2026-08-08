@@ -1,15 +1,38 @@
 "use client";
 
-import { useFormState } from "react-dom";
-import { signInAction } from "@/server/actions/admin/auth";
+import { useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 export default function LoginForm() {
-  const [state, formAction] = useFormState(signInAction, null as { error?: string; success?: boolean } | null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const supabase = createClient();
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      setError("Invalid email or password.");
+      setLoading(false);
+      return;
+    }
+
+    // Redirect to admin dashboard
+    window.location.href = "/admin";
+  }
 
   return (
-    <form action={formAction} className="space-y-5">
-      {state?.error && (
-        <p className="font-mono text-xs text-red-400" role="alert">{state.error}</p>
+    <form onSubmit={onSubmit} className="space-y-5">
+      {error && (
+        <p className="font-mono text-xs text-red-400" role="alert">{error}</p>
       )}
       <div>
         <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-[0.2em] text-mist mb-2">
@@ -23,6 +46,7 @@ export default function LoginForm() {
           autoComplete="email"
           className="w-full rounded border border-white/15 bg-panel px-3 py-2.5 font-mono text-sm text-paper placeholder-mist/40 focus:border-accent focus:outline-none"
           placeholder="admin@example.com"
+          disabled={loading}
         />
       </div>
       <div>
@@ -37,13 +61,15 @@ export default function LoginForm() {
           autoComplete="current-password"
           className="w-full rounded border border-white/15 bg-panel px-3 py-2.5 font-mono text-sm text-paper placeholder-mist/40 focus:border-accent focus:outline-none"
           placeholder="••••••••"
+          disabled={loading}
         />
       </div>
       <button
         type="submit"
-        className="w-full rounded bg-accent px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent-deep"
+        disabled={loading}
+        className="w-full rounded bg-accent px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent-deep disabled:opacity-50"
       >
-        Sign In
+        {loading ? "Signing in..." : "Sign In"}
       </button>
     </form>
   );
