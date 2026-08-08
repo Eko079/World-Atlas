@@ -3,26 +3,33 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const response = NextResponse.next();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(cookies) {
-          for (const { name, value, options } of cookies) {
-            response.cookies.set(name, value, options);
-          }
+  if (!supabaseUrl || !supabaseKey) {
+    return NextResponse.next();
+  }
+
+  let response = NextResponse.next();
+
+  const supabase = createServerClient(supabaseUrl, supabaseKey, {
+    cookies: {
+      getAll() {
+        return request.cookies.getAll();
+      },
+      setAll(cookies) {
+        for (const { name, value, options } of cookies) {
+          response.cookies.set(name, value, options);
         }
       }
     }
-  );
+  });
 
-  await supabase.auth.getSession();
+  try {
+    await supabase.auth.getSession();
+  } catch {
+    // Ignore session errors in middleware
+  }
 
   return response;
 }
