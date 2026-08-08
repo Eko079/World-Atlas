@@ -8,6 +8,13 @@
       "when": 1786175013395,
       "tag": "0000_sudden_otto_octavius",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1786178824406,
+      "tag": "0001_black_blue_shield",
+      "breakpoints": true
     }
   ]
 }
