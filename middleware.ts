@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  let response = NextResponse.next();
+  const response = NextResponse.next();
 
   const supabase = createServerClient(supabaseUrl, supabaseKey, {
     cookies: {
@@ -25,11 +25,7 @@ export async function middleware(request: NextRequest) {
     }
   });
 
-  try {
-    await supabase.auth.getSession();
-  } catch {
-    // Ignore session errors in middleware
-  }
+  await supabase.auth.getSession();
 
   return response;
 }

@@ -22,15 +22,8 @@ export default async function LoginPage() {
         if (isAdminAllowed(session.user.email)) {
           redirect("/admin");
         }
-        return (
-          <div className="min-h-screen bg-ink flex items-center justify-center px-4">
-            <div className="text-center">
-              <p className="font-display text-2xl font-semibold text-paper uppercase">Access Denied</p>
-              <p className="mt-3 font-mono text-sm text-mist">Your account is not authorized for admin access.</p>
-              <p className="mt-6 font-mono text-xs text-mist/50">{session.user.email}</p>
-            </div>
-          </div>
-        );
+        // Access denied - show message
+        return <AccessDenied email={session.user.email} />;
       }
     } catch {
       // Continue to login form
@@ -47,6 +40,18 @@ export default async function LoginPage() {
           </h1>
         </div>
         <LoginForm />
+      </div>
+    </div>
+  );
+}
+
+function AccessDenied({ email }: { email: string | undefined }) {
+  return (
+    <div className="min-h-screen bg-ink flex items-center justify-center px-4">
+      <div className="text-center">
+        <p className="font-display text-2xl font-semibold text-paper uppercase">Access Denied</p>
+        <p className="mt-3 font-mono text-sm text-mist">Your account is not authorized for admin access.</p>
+        <p className="mt-6 font-mono text-xs text-mist/50">{email}</p>
       </div>
     </div>
   );

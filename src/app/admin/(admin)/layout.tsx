@@ -20,6 +20,16 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     );
   }
 
+  // Get session from cookie store
+  const { cookies } = await import("next/headers");
+  const cookieStore = await cookies();
+  const sessionCookie = cookieStore.get("sb-blmhmmshalzemnwygqbl-auth-token");
+
+  if (!sessionCookie) {
+    redirect("/admin/login");
+  }
+
+  // Verify session with Supabase
   const supabase = await createClient();
   const { data: { session } } = await supabase.auth.getSession();
 
