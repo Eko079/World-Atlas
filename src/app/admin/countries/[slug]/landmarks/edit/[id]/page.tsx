@@ -17,6 +17,9 @@ export default async function LandmarkEditPage({ params }: LandmarkEditPageProps
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/landmarks`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Landmarks
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{item ? "Edit Landmark" : "Add Landmark"}</h2>
 
       <form action={upsertLandmark} className="mt-6 space-y-4">

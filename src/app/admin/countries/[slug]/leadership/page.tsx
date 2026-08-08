@@ -16,6 +16,9 @@ export default async function LeadershipPage({ params }: LeadershipPageProps) {
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← {country.name}
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">Leadership</h2>
       <p className="mt-1 font-mono text-sm text-mist">Manage national leadership records</p>
 
@@ -30,7 +33,7 @@ export default async function LeadershipPage({ params }: LeadershipPageProps) {
                 <p className="font-mono text-xs text-mist">{l.position}</p>
                 <p className="font-mono text-xs text-mist/60">
                   {l.termStart.toISOString().split("T")[0]} — {l.termEnd ? l.termEnd.toISOString().split("T")[0] : "Present"}
-                  {l.isCurrent ? " · <span class=\"text-accent\">Current</span>" : ""}
+                  {l.isCurrent && <span className="text-accent"> · Current</span>}
                 </p>
               </div>
               <div className="flex gap-2">

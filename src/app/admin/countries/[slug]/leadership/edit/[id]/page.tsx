@@ -19,6 +19,9 @@ export default async function LeadershipEditPage({ params }: LeadershipEditPageP
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/leadership`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Leadership
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{leader ? "Edit Leader" : "Add Leader"}</h2>
 
       <form action={upsertLeader} className="mt-6 space-y-4">

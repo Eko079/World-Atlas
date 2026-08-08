@@ -19,6 +19,9 @@ export default async function LanguageEditPage({ params }: LanguageEditPageProps
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/languages`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Languages
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{lang ? "Edit Language" : "Add Language"}</h2>
 
       <form action={upsertLanguage} className="mt-6 space-y-4">

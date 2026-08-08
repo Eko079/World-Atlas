@@ -17,6 +17,9 @@ export default async function CultureEditPage({ params }: CultureEditPageProps) 
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/culture`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Culture
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{item ? "Edit Culture" : "Add Culture"}</h2>
 
       <form action={upsertCulture} className="mt-6 space-y-4">

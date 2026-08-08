@@ -16,8 +16,11 @@ export default async function MediaPage({ params }: MediaPageProps) {
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← {country.name}
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">Media</h2>
-      <p className="mt-1 font-mono text-sm text-mist">Manage media assets and gallery</p>
+      <p className="mt-1 font-mono text-sm text-mist">Manage media assets and gallery (read-only — edit paths in database)</p>
 
       <div className="mt-6">
         <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-mist mb-3">Flag & Hero</h3>

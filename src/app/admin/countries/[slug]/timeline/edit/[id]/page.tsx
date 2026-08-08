@@ -17,6 +17,9 @@ export default async function TimelineEditPage({ params }: TimelineEditPageProps
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/timeline`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Timeline
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{item ? "Edit Timeline Event" : "Add Timeline Event"}</h2>
 
       <form action={upsertTimeline} className="mt-6 space-y-4">

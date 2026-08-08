@@ -16,6 +16,9 @@ export default async function LanguagesPage({ params }: LanguagesPageProps) {
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← {country.name}
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">Languages</h2>
       <p className="mt-1 font-mono text-sm text-mist">Manage languages spoken in the country</p>
 
@@ -32,7 +35,7 @@ export default async function LanguagesPage({ params }: LanguagesPageProps) {
               <div className="flex gap-2">
                 <a href={`/admin/countries/${slug}/languages/edit/${l.id}`} className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent hover:underline">Edit</a>
                 <form action={async () => { "use server"; await deleteLanguage(l.id); }}>
-                  <button type="submit" className="font-mono text-[10px] uppercase tracking-[0.15em] text-red-400 hover:text-red-300">Del</button>
+                  <button type="submit" className="font-mono text-[10px] uppercase tracking-[0.15em] text-red-400 hover:text-red-300">Delete</button>
                 </form>
               </div>
             </div>

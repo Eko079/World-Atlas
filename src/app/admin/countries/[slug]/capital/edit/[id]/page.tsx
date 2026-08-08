@@ -19,6 +19,9 @@ export default async function CapitalEditPage({ params }: CapitalEditPageProps) 
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/capital`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Capitals
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">
         {cap ? "Edit Capital" : "Add Capital"}
       </h2>

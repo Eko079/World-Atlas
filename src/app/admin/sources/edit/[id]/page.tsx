@@ -14,6 +14,9 @@ export default async function SourceEditPage({ params }: SourceEditPageProps) {
 
   return (
     <div>
+      <a href="/admin/sources" className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Sources
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{item ? "Edit Source" : "Add Source"}</h2>
 
       <form action={upsertSource} className="mt-6 space-y-4">

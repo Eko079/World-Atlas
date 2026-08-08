@@ -2,6 +2,7 @@ import { db } from "@/db";
 import { countries } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { updateCountryIdentity } from "@/server/actions/admin/country";
+import Link from "next/link";
 
 interface IdentityPageProps {
   params: Promise<{ slug: string }>;
@@ -14,11 +15,22 @@ export default async function IdentityPage({ params }: IdentityPageProps) {
   });
 
   if (!country) {
-    return <div>Country not found</div>;
+    return (
+      <div>
+        <h1 className="font-display text-2xl font-semibold uppercase text-paper">Country Not Found</h1>
+        <p className="mt-2 font-mono text-sm text-mist">No country found with slug: {slug}</p>
+        <Link href="/admin/countries" className="mt-4 inline-block font-mono text-[11px] uppercase tracking-[0.15em] text-accent hover:underline">
+          ← Back to Countries
+        </Link>
+      </div>
+    );
   }
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← {country.name}
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">Identity</h2>
       <p className="mt-1 font-mono text-sm text-mist">Edit country identity information</p>
 

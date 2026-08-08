@@ -19,6 +19,9 @@ export default async function StatEditPage({ params }: StatEditPageProps) {
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}/statistics`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← Statistics
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">{stat ? "Edit Statistic" : "Add Statistic"}</h2>
 
       <form action={upsertStatistic} className="mt-6 space-y-4">

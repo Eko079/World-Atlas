@@ -16,6 +16,9 @@ export default async function CapitalPage({ params }: CapitalPageProps) {
 
   return (
     <div>
+      <a href={`/admin/countries/${slug}`} className="mb-4 inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-mist/60 hover:text-paper">
+        ← {country.name}
+      </a>
       <h2 className="font-display text-2xl font-semibold uppercase text-paper">Capital</h2>
       <p className="mt-1 font-mono text-sm text-mist">Manage capital records</p>
 
