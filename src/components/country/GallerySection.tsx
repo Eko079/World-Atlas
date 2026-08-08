@@ -38,7 +38,7 @@ export default function GallerySection({ country }: { country: Country }) {
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {country.gallery.map((image, i) => (
-            <Reveal key={image.src} delay={(i % 3) * 0.08}>
+            <Reveal key={image.path} delay={(i % 3) * 0.08}>
               <GalleryItem image={image} wide={image.span === "wide"} />
             </Reveal>
           ))}

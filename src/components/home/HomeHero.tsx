@@ -72,8 +72,11 @@ export default function HomeHero({ country }: { country: Country }) {
 
           <div className="mt-6 overflow-hidden">
             <h1
-              className="hero-title font-display text-[18vw] font-semibold uppercase leading-[0.85] tracking-tight text-paper sm:text-[14vw] lg:text-[11rem]"
-              style={{ animationDelay: "1.85s" }}
+              className="hero-title font-display font-semibold uppercase leading-[0.85] tracking-tight text-paper"
+              style={{
+                animationDelay: "1.85s",
+                fontSize: "clamp(3rem, 18vw, 11rem)"
+              }}
             >
               {country.name}
             </h1>

@@ -38,7 +38,7 @@ export default function TimelineSection({ country }: { country: Country }) {
           <MonoLabel>{country.timeline.length} chapters</MonoLabel>
         </div>
         {country.timeline.map((event, i) => (
-          <Reveal key={event.title} delay={i * 0.06}>
+          <Reveal key={event.id} delay={i * 0.06}>
             <TimelineRow event={event} />
           </Reveal>
         ))}

@@ -151,9 +151,3 @@
 .pulse-soft {
   animation: pulse-soft 1.4s ease-in-out infinite;
 }
-
-/* No-JS fallback: reveal all animation-gated content */
-html:not(.has-js) [style*="opacity: 0"],
-html:not(.has-js) [style*="opacity:0"] {
-  opacity: 1 !important;
-}

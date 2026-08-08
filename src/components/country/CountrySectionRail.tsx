@@ -17,7 +17,7 @@ export default function CountrySectionRail({ code }: { code: string }) {
   return (
     <aside className="pointer-events-none fixed right-8 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-6 xl:flex">
       <span className="font-mono text-[9px] tracking-[0.4em] text-mist/50 [writing-mode:vertical-rl]">
-        {code} — 12 SECTIONS
+        {code} — {SECTIONS.length} SECTIONS
       </span>
       <nav
         aria-label="Country sections"

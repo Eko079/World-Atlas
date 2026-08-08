@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "A cinematic interactive atlas. Explore countries through geography, culture, leadership, landmarks, cuisine and more.",
   keywords: ["world atlas", "indonesia", "nations", "geography", "culture"],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg"
+  },
   openGraph: {
     title: "World Atlas",
     description:
@@ -24,13 +28,8 @@ export default function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-      <html lang="en" data-scroll-behavior="smooth">
+      <html lang="en" className="has-js" data-scroll-behavior="smooth">
       <body className="bg-ink text-paper antialiased">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.documentElement.classList.add("has-js")`
-          }}
-        />
         <Providers>
           <a
             href="#main"
